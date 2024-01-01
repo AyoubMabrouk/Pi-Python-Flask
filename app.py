@@ -6,7 +6,19 @@ import predictRejetCCE
 # from prediction import courbe
 
 app = Flask(__name__)
-app.secret_key = "manbearpig_MUDMAN888"
+# Enable CORS for all routes
+@app.after_request
+def add_cors_headers(response):
+    # Allow requests from your Angular application's domain
+    response.headers.add('Access-Control-Allow-Origin', 'https://ayoub-mabrouk-analytiplay.vercel.app')
+    
+    # Allow the Content-Type header
+    response.headers.add('Access-Control-Allow-Headers', 'Content-Type')
+
+    # Allow the specified HTTP methods
+    response.headers.add('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+
+    return response
 @app.route('/')
 def home():
 	return 'Hello, this is the home page!'
