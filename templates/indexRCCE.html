@@ -45,7 +45,7 @@
     {% elif virginica %}
     <div class="alert alert-primary">{{virginica}}</div>
     {% endif %}
-    <form class="form-group" action="/predictRCCE" method="POST" onsubmit="return validateForm()">
+    <form class="form-group" style="width:96%" action="/predictRCCE" method="POST" onsubmit="return validateForm()">
         <label for="Etat">Etat :</label>
         <input class="form-control" type="text" name="Etat" required>
         <label for="IdTypeLot">IdTypeLot :</label>
